@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your Chat</title>
+</head>
+<body>
+    <p>Edit your JOb Detail : <%= post._id%></p>
+    <p>Job Name: <b><%=post.job_name%></b></p>
+
+    <form method="post" action="/posts/<%=post._id%>?_method=PUT">
+        <textarea name="msg" rows="10" cols="20"><%= post.about%></textarea>
+        <button>Edit</button>
+    </form>
+</body>
+</html>

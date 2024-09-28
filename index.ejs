@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job listing </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%= include("layout/boilerplate.ejs") %>
+    <h3>All Posts!</h3>
+    <form method="get" action="/chats/new">
+        <button>New Post</button>
+    </form><br>
+    <% for(let post of posts) { %>
+        <div class="post">
+            <p>Job Name : <%= post.job_name %> </p>
+            <div class="msg">
+                <p>Job description: <%= post.about %> </p>
+            </div>
+            <hr>
+            <p>
+                <%= post.created_at.toString().split(" ")[4] %>
+            </p>
+            <p>Post at: <%= post.created_at.toString().split(" ").slice(0, 4).join(" ") %></p>
+            <form method="get" action="/Posts/<%= post._id%>/edit">
+                <button>Edit</button>
+            </form><br>
+            <form method="post" action="/posts/<%=post._id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+        <br><br>
+    <% } %>
+
+</body>
+</html>
+

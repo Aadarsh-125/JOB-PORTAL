@@ -1,0 +1,14 @@
+body {
+    margin-left: 20px;
+}
+
+.post{
+    background-color: rgb(239, 167, 71);
+    padding: 15px;
+    border-radius: 15px;
+}
+.msg{
+    padding: 10px 3px;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+}
